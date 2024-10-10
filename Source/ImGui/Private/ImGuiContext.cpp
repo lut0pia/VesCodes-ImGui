@@ -21,6 +21,7 @@ THIRD_PARTY_INCLUDES_START
 #include <NetImGui_Api.h>
 THIRD_PARTY_INCLUDES_END
 
+#include "ImGuiModule.h"
 #include "SImGuiOverlay.h"
 
 FImGuiViewportData* FImGuiViewportData::GetOrCreate(ImGuiViewport* Viewport)
@@ -396,6 +397,8 @@ void FImGuiContext::Initialize()
 	{
 		IO.Fonts->AddFontFromFileTTF(TCHAR_TO_UTF8(*FontPath), 16);
 	}
+
+	FImGuiModule::OnInitializeContext.Broadcast();
 
 	if (FSlateApplication::IsInitialized())
 	{

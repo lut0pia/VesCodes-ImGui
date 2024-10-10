@@ -15,6 +15,8 @@
 #include "ImGuiContext.h"
 #include "SImGuiOverlay.h"
 
+FSimpleMulticastDelegate FImGuiModule::OnInitializeContext;
+
 void FImGuiModule::StartupModule()
 {
 #if WITH_EDITOR

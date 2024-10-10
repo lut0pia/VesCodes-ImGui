@@ -2,6 +2,7 @@
 
 #include <Misc/EngineVersionComparison.h>
 #include <Modules/ModuleManager.h>
+#include <Delegates/Delegate.h>
 
 class FImGuiContext;
 class SWindow;
@@ -30,6 +31,8 @@ public:
 
 	/// Creates an ImGui context for a game viewport
 	static TSharedPtr<FImGuiContext> CreateViewportContext(UGameViewportClient* GameViewport);
+
+	static FSimpleMulticastDelegate OnInitializeContext;
 
 private:
 	void OnEndPIE(bool bIsSimulating);
