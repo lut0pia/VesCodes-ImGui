@@ -60,6 +60,8 @@ struct ImGuiContext;
 struct ImPlotContext;
 enum ImGuiKey : int;
 struct FKey;
+class UTexture;
+struct FSlateBrush;
 
 namespace ImGui
 {
